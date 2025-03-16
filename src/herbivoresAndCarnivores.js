@@ -10,11 +10,7 @@ class Animal {
   }
 
   static deleteDead() {
-    for (let i = 0; i < Animal.alive.length; i++) {
-      if (Animal.alive[i].health <= 0) {
-        Animal.alive.splice(i, 1);
-      }
-    }
+    Animal.alive = Animal.alive.filter((animal) => animal.health > 0);
   }
 }
 
